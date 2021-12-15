@@ -1,6 +1,6 @@
 <template>
     <section class="home">
-        <h1>Hello Home</h1>
+        <h1>Hello Everybody</h1>
         <comment />
         <feed />
     </section>

@@ -7,6 +7,9 @@ Vue.use(Vuex);
 export const feed = {
     state: {
         feed: [],
+        filterBy: {
+            txt: ''
+        }
     },
     getters: {
         feed(state) {
@@ -22,9 +25,9 @@ export const feed = {
         },
     },
     actions: {
-        async loadFeed({commit}) {
+        async loadFeed({commit}, {filterBy}) {
             try { 
-                const feed = await feedService.query()
+                const feed = await feedService.query(filterBy)
                 console.log(feed);
                 commit({type: 'loadFeed', feed})
             } catch(err) {

@@ -9,4 +9,10 @@
 
 
 <style lang="scss">
+body {
+  // margin: auto;
+  display: flex;
+  justify-content: center;
+  background: #eee;
+}
 </style>

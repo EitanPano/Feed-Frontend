@@ -1,8 +1,8 @@
 <template>
     <form action="" @submit.prevent="submitComment">
-        <input v-model="newComment.email" type="email" placeholder="Email">
-        <textarea v-model="newComment.message" class="free-text" name="" id="" placeholder="Message"></textarea>
-        <button>SUBMIT</button>
+        <input v-model="newComment.email" class="email-input" type="email" placeholder="Email">
+        <textarea v-model="newComment.message" class="message-input" name="" id="" placeholder="Message"></textarea>
+        <button class="btn-submit">SUBMIT</button>
     </form>
 </template>
 
@@ -31,16 +31,34 @@ export default {
 <style scoped lang="scss">
 
 form {
-    & > * {
-        padding: 0.5em;
-    }
-
+    background-color: rgb(225, 225, 225);
+    padding: 1em;
     display: flex;
     flex-direction: column;
     width: 20em;
     gap: 0.5em;
 
-    .free-text {
+    & > * {
+        padding: 0.5em;
+    }
+
+    .email-input, .message-input {
+        border: 1px solid #ccc;
+    }
+
+    .btn-submit {
+        width: 6em;
+        background: rgb(98, 184, 255);
+        font-weight: bold;
+        color: white;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        border: none;
+        border-radius: 0.3em;
+        cursor: pointer;
+    }
+
+
+    .message-input {
     resize: none;
     height: 5em;
 }
